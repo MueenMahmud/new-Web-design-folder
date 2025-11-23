@@ -1,0 +1,171 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Fira Sans', sans-serif;
+}
+body{
+	margin: 0;
+}
+
+h1{
+	font-size: 2.5rem;
+	text-align: center;
+	color: white;
+}
+
+a{
+	box-sizing: ;
+	color: white;
+	font-size: 1.2rem;
+	text-decoration: none;
+
+}
+
+
+/* For mobile phones: */
+
+[class*="col-"]{
+	width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+/*navbar design start*/
+
+.navbar{
+	background-color: yellowgreen ;
+	padding: 1% 7%;
+	text-align: center;
+}
+.navbar h1{
+	color: white;
+	margin: 0;
+	padding-top: 10px;
+}
+h2{
+	font-family: "Satisfy", cursive;
+	font-size: 1.5rem;
+}
+.nav-manu{
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+}
+
+.nav-manu a{
+	background-color: yellowgreen;
+	border-radius: 5px;
+	margin: 3px 0px;
+	padding: 10px;
+
+}
+.nav-manu a:hover{
+	background-color: gray;
+}
+
+.navbar::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+p{
+	font-size: 1.2rem;
+	text-align: justify;
+}
+.dotted-hr{
+	border:  dotted;
+	border-radius: none;
+	margin: 20px auto;
+	width: 70px;
+}
+
+
+/*navbar design end*/
+
+/*profile design start*/
+.profile .profile-desc h1{
+	color: black;
+	font-family: 'satisfy',cursive;
+}
+.profile{
+	background-color: lightsalmon;
+	padding: 120px;
+	position: relative;
+	text-align: center;
+}
+.profile .top-icon{
+	position: absolute;
+	right: 60px;
+	top: 30px;
+	transition: transform 2s;
+}
+.profile .top-icon:hover{
+	
+	transform: rotate(360deg);
+}
+
+.profile .bottom-icon{
+	
+	left: 30px;
+	top: 30px;
+	transition: transform 2s;
+}
+.profile .bottom-icon:hover{
+	
+	transform: rotate(360deg);
+}
+
+/*profile design end*/
+
+/*about me desing start*/
+.about-me{
+	background-color: #39a4ac;
+	padding: 1% 7%;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+}
+.about-me::after{
+	clear: both;
+	display: table;
+	content: "";
+
+}
+.aboutme-img img{
+	border:  solid white;
+	border-radius: 50%;
+	height: 200px;
+	width: 180px;
+
+}
+
+.aboutme p{
+	text-align: center;
+}
+
+.cv-button{
+	background-color: yellowgreen;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	padding: 14px;
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: center;
+	margin: 5px;
+}
+
+/*about me desing start*/
