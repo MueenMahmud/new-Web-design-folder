@@ -78,8 +78,25 @@ function checkLoginStatus() {
     }
 }
 
-window.onload = function () {
-    document.getElementById('login-btn').addEventListener('click', login);
-    document.getElementById('logout-btn').addEventListener('click', logout);
-    checkLoginStatus();
-};
+if (typeof window !== 'undefined') {
+    window.onload = function () {
+        document.getElementById('login-btn').addEventListener('click', login);
+        document.getElementById('logout-btn').addEventListener('click', logout);
+        checkLoginStatus();
+    };
+}
+
+// Export for testing (Node.js / Jest)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        EXPECTED_USERNAME_HASH,
+        EXPECTED_PASSWORD_HASH,
+        sha256,
+        sanitizeInput,
+        login,
+        logout,
+        showLoginForm,
+        showLogoutButton,
+        checkLoginStatus
+    };
+}

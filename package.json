@@ -1,0 +1,26 @@
+{
+  "name": "new-web-design-folder",
+  "version": "1.0.0",
+  "main": "gtpjavascript logand out.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "*.js",
+      "!jest.config.js",
+      "!coverage/**"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
