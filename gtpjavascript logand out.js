@@ -58,15 +58,15 @@ function logout() {
 }
 
 function showLoginForm() {
-    document.getElementById('login-container').querySelector('#logout-container').classList.add('hidden');
-    document.getElementById('login-container').querySelector('#username').value = '';
-    document.getElementById('login-container').querySelector('#password').value = '';
-    document.getElementById('login-container').querySelector('button').style.display = 'block';
+    document.getElementById('logout-container').classList.add('hidden');
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('login-btn').style.display = 'block';
 }
 
 function showLogoutButton() {
-    document.getElementById('login-container').querySelector('#logout-container').classList.remove('hidden');
-    document.getElementById('login-container').querySelector('button').style.display = 'none';
+    document.getElementById('logout-container').classList.remove('hidden');
+    document.getElementById('login-btn').style.display = 'none';
 }
 
 function checkLoginStatus() {
@@ -78,4 +78,8 @@ function checkLoginStatus() {
     }
 }
 
-window.onload = checkLoginStatus;
+window.onload = function () {
+    document.getElementById('login-btn').addEventListener('click', login);
+    document.getElementById('logout-btn').addEventListener('click', logout);
+    checkLoginStatus();
+};
