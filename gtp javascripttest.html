@@ -51,18 +51,28 @@
         .form-group button:hover {
             background-color: #218838;
         }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container" id="login-container">
         <h2>Login</h2>
+        <div id="error-message" class="error-message hidden" role="alert" aria-live="polite"></div>
         <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" id="username" maxlength="64" autocomplete="username">
+            <input type="text" id="username" required aria-required="true" maxlength="64" autocomplete="username">
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" id="password" maxlength="128" autocomplete="current-password">
+            <input type="password" id="password" required aria-required="true" maxlength="128" autocomplete="current-password">
         </div>
         <div class="form-group">
             <button id="login-btn">Login</button>
