@@ -54,4 +54,18 @@ function checkLoginStatus() {
 }
 
 // Run on page load
-window.onload = checkLoginStatus;
+if (typeof window !== 'undefined') {
+    window.onload = checkLoginStatus;
+}
+
+// Export for testing (Node.js / Jest)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        USER_DATA,
+        login,
+        logout,
+        showLoginForm,
+        showLogoutButton,
+        checkLoginStatus
+    };
+}
