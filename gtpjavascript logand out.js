@@ -1,4 +1,4 @@
-// app.js
+// app.js  (requires shared/dom-utils.js loaded first)
 
 // IMPORTANT: In a production application, authentication must be handled
 // server-side. Never store credentials in client-side JavaScript.
@@ -9,16 +9,16 @@
 // This is NOT a substitute for server-side auth — it only prevents
 // credentials from appearing as plaintext in source code.
 async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    var msgBuffer = new TextEncoder().encode(message);
+    var hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    var hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
 }
 
 // SHA-256 hashes of the demo credentials (username: "user", password: "password").
 // In production, replace this with server-side authentication.
-const EXPECTED_USERNAME_HASH = '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb';
-const EXPECTED_PASSWORD_HASH = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8';
+var EXPECTED_USERNAME_HASH = '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb';
+var EXPECTED_PASSWORD_HASH = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8';
 
 function sanitizeInput(input) {
     if (typeof input !== 'string') return '';
@@ -26,8 +26,8 @@ function sanitizeInput(input) {
 }
 
 async function login() {
-    var rawUsername = document.getElementById('username').value;
-    var rawPassword = document.getElementById('password').value;
+    var rawUsername = byId('username').value;
+    var rawPassword = byId('password').value;
 
     var username = sanitizeInput(rawUsername);
     var password = sanitizeInput(rawPassword);
@@ -58,20 +58,19 @@ function logout() {
 }
 
 function showLoginForm() {
-    document.getElementById('logout-container').classList.add('hidden');
-    document.getElementById('username').value = '';
-    document.getElementById('password').value = '';
-    document.getElementById('login-btn').style.display = 'block';
+    byId('logout-container').classList.add('hidden');
+    byId('username').value = '';
+    byId('password').value = '';
+    byId('login-btn').style.display = 'block';
 }
 
 function showLogoutButton() {
-    document.getElementById('logout-container').classList.remove('hidden');
-    document.getElementById('login-btn').style.display = 'none';
+    byId('logout-container').classList.remove('hidden');
+    byId('login-btn').style.display = 'none';
 }
 
 function checkLoginStatus() {
-    var loggedIn = sessionStorage.getItem('loggedIn');
-    if (loggedIn === 'true') {
+    if (sessionStorage.getItem('loggedIn') === 'true') {
         showLogoutButton();
     } else {
         showLoginForm();
@@ -80,8 +79,8 @@ function checkLoginStatus() {
 
 if (typeof window !== 'undefined') {
     window.onload = function () {
-        document.getElementById('login-btn').addEventListener('click', login);
-        document.getElementById('logout-btn').addEventListener('click', logout);
+        byId('login-btn').addEventListener('click', login);
+        byId('logout-btn').addEventListener('click', logout);
         checkLoginStatus();
     };
 }
