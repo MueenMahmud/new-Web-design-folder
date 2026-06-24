@@ -1,4 +1,4 @@
-// Amer Kota - Voice Translation App
+// Amar Kota - Voice Translation App
 // Bengali -> Korean / English
 
 (function () {
