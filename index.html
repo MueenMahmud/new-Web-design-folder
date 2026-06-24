@@ -5,32 +5,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'">
 	<title>Muhin Mahmud</title>
+
+	<!-- Shared base (reset, grid, utilities) -->
+	<link rel="stylesheet" type="text/css" href="shared/base.css">
+
+	<!-- Mobile-first styles -->
 	<link rel="stylesheet" type="text/css" href="pstyle.css">
 
-	<!-- css for mobile --->
-	<link rel="stylesheet" type="text/css" href="pstyle.css">
+	<!-- Desktop overrides -->
+	<link rel="stylesheet" type="text/css" href="destop.css" media="screen and (min-width: 950px)">
 
-	<!-- css for destop --->
-	<link rel="stylesheet" type="text/css" href="destop.css" media="screen and (min-width: 950px">
-
+	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--Google font --->
-
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<div class="navbar">
+<div class="navbar clearfix">
 
 	<div class="nav-logo col-2">
-		
 		<img src="images/I phone 4se.jpg" alt="logo" height="120px" width="150px">
 	</div>
 
@@ -44,37 +39,33 @@
 		<a href="#about-me-id">About</a>
 		<a href="#">Skill</a>
 		<a href="#">Help</a>
-		
 	</div>
 
 </div>
 
 <!-- navbar end -->
 
-<!-- profile starts heare -->
+<!-- profile starts here -->
 
 <div class="profile">
 
-	<img class="top-icon" src="images/i phone 4se.jpg" height="50px" width="60px">
+	<img class="top-icon spin-hover" src="images/i phone 4se.jpg" height="50px" width="60px">
 
 	<div class="profile-desc">
-
 		<h1>I am a compuer Student <br> & <br> web Developer</h1>
 		<p> Hi my name is a Muhien Islam. welcome to my personal profile</p>
-		
 	</div>
-	<img class="bottom-icon" src="images/i phone 4se.jpg" height="50px" width="60px">
+	<img class="bottom-icon spin-hover" src="images/i phone 4se.jpg" height="50px" width="60px">
 </div>
 
-<!-- profile end heare -->
+<!-- profile end here -->
 
-<!-- about me shot start -->
-<div class="about-me" id="about-me-id">
+<!-- about me section start -->
+<div class="about-me clearfix" id="about-me-id">
 	<h2> About me</h2>
 	<hr class="dotted-hr">
 	<div class="aboutme-img col-6">
-		<img src="images/I phone 4se.jpg"> <!-- height="50px" width="60px" -->
-		
+		<img src="images/I phone 4se.jpg">
 	</div>
 	<div class="aboutme-desc col-6">
 		<p>I like to all my self a pasionate computer is a science teacher a & web developer </p>
@@ -93,9 +84,7 @@
 			</a>
 		</p>
 	</div>
-		
-	</div>
-	
+
 </div>
  <!-- about me end -->
 </body>
