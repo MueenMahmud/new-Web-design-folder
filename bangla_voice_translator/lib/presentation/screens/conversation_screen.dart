@@ -20,9 +20,7 @@ class ConversationScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.delete_outline),
             onPressed: () {
-              context
-                  .read<ConversationBloc>()
-                  .add(const ClearConversation());
+              context.read<ConversationBloc>().add(const ClearConversation());
             },
           ),
         ],
@@ -63,13 +61,11 @@ class ConversationScreen extends StatelessWidget {
                     ? Center(
                         child: Text(
                           'Start speaking to begin the conversation',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge
-                              ?.copyWith(
-                                color:
-                                    colorScheme.onSurface.withValues(alpha: 0.5),
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    color: colorScheme.onSurface
+                                        .withValues(alpha: 0.5),
+                                  ),
                         ),
                       )
                     : ListView.builder(
@@ -103,12 +99,11 @@ class ConversationScreen extends StatelessWidget {
                     _buildRecordButton(
                       context: context,
                       label: 'Bangla',
-                      isRecording: state.status ==
-                          ConversationStatus.recordingUser,
+                      isRecording:
+                          state.status == ConversationStatus.recordingUser,
                       isDisabled: state.status ==
                               ConversationStatus.processing ||
-                          state.status ==
-                              ConversationStatus.recordingPartner,
+                          state.status == ConversationStatus.recordingPartner,
                       onStart: () => context
                           .read<ConversationBloc>()
                           .add(const StartUserRecording()),
@@ -120,12 +115,11 @@ class ConversationScreen extends StatelessWidget {
                     _buildRecordButton(
                       context: context,
                       label: 'Korean',
-                      isRecording: state.status ==
-                          ConversationStatus.recordingPartner,
-                      isDisabled: state.status ==
-                              ConversationStatus.processing ||
-                          state.status ==
-                              ConversationStatus.recordingUser,
+                      isRecording:
+                          state.status == ConversationStatus.recordingPartner,
+                      isDisabled:
+                          state.status == ConversationStatus.processing ||
+                              state.status == ConversationStatus.recordingUser,
                       onStart: () => context
                           .read<ConversationBloc>()
                           .add(const StartPartnerRecording()),
@@ -175,9 +169,7 @@ class ConversationScreen extends StatelessWidget {
           const SizedBox(height: 32),
           FilledButton.icon(
             onPressed: () {
-              context
-                  .read<ConversationBloc>()
-                  .add(const StartConversation());
+              context.read<ConversationBloc>().add(const StartConversation());
             },
             icon: const Icon(Icons.play_arrow),
             label: const Text('Start Conversation'),
@@ -231,8 +223,7 @@ class ConversationScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       context.read<ConversationBloc>().add(
-                            PlayMessageAudio(
-                                audioPath: message.audioPath!),
+                            PlayMessageAudio(audioPath: message.audioPath!),
                           );
                     },
                     child: Row(
@@ -280,9 +271,7 @@ class ConversationScreen extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         GestureDetector(
-          onTap: isDisabled
-              ? null
-              : (isRecording ? onStop : onStart),
+          onTap: isDisabled ? null : (isRecording ? onStop : onStart),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             width: isRecording ? 80 : 64,
@@ -290,13 +279,9 @@ class ConversationScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: isDisabled
                   ? color.withValues(alpha: 0.3)
-                  : (isRecording
-                      ? color.withValues(alpha: 0.2)
-                      : color),
+                  : (isRecording ? color.withValues(alpha: 0.2) : color),
               shape: BoxShape.circle,
-              border: isRecording
-                  ? Border.all(color: color, width: 3)
-                  : null,
+              border: isRecording ? Border.all(color: color, width: 3) : null,
             ),
             child: Icon(
               isRecording ? Icons.stop : Icons.mic,

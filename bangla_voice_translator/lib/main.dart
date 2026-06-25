@@ -30,15 +30,13 @@ class BanglaVoiceTranslatorApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) =>
-              di.sl<AuthBloc>()..add(const AuthCheckRequested()),
+          create: (_) => di.sl<AuthBloc>()..add(const AuthCheckRequested()),
         ),
         BlocProvider(create: (_) => di.sl<TranslationBloc>()),
         BlocProvider(create: (_) => di.sl<HistoryBloc>()),
         BlocProvider(create: (_) => di.sl<FavoritesBloc>()),
         BlocProvider(
-          create: (_) =>
-              di.sl<SettingsBloc>()..add(const LoadSettings()),
+          create: (_) => di.sl<SettingsBloc>()..add(const LoadSettings()),
         ),
         BlocProvider(create: (_) => di.sl<ConversationBloc>()),
       ],

@@ -130,7 +130,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       await _player.setFilePath(event.audioPath);
       emit(state.copyWith(isPlaying: true, status: TranslationStatus.playing));
       await _player.play();
-      emit(state.copyWith(isPlaying: false, status: TranslationStatus.completed));
+      emit(state.copyWith(
+          isPlaying: false, status: TranslationStatus.completed));
     } catch (e) {
       emit(state.copyWith(
         isPlaying: false,
@@ -145,8 +146,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     Emitter<TranslationState> emit,
   ) async {
     await _player.stop();
-    emit(state.copyWith(
-        isPlaying: false, status: TranslationStatus.completed));
+    emit(state.copyWith(isPlaying: false, status: TranslationStatus.completed));
   }
 
   void _onReset(

@@ -14,20 +14,44 @@ class OfflinePhrasebook {
 
     // Common phrases
     {'bn': 'আমি বাংলায় কথা বলি', 'ko': '저는 벵골어를 합니다', 'en': 'I speak Bangla'},
-    {'bn': 'আপনি কি ইংরেজি বলেন?', 'ko': '영어를 할 수 있나요?', 'en': 'Do you speak English?'},
-    {'bn': 'আমি বুঝতে পারছি না', 'ko': '이해하지 못하겠어요', 'en': 'I don\'t understand'},
+    {
+      'bn': 'আপনি কি ইংরেজি বলেন?',
+      'ko': '영어를 할 수 있나요?',
+      'en': 'Do you speak English?'
+    },
+    {
+      'bn': 'আমি বুঝতে পারছি না',
+      'ko': '이해하지 못하겠어요',
+      'en': 'I don\'t understand'
+    },
     {'bn': 'আবার বলুন', 'ko': '다시 말해주세요', 'en': 'Please say it again'},
     {'bn': 'এটা কত?', 'ko': '얼마에요?', 'en': 'How much is this?'},
     {'bn': 'আমার নাম...', 'ko': '제 이름은...', 'en': 'My name is...'},
-    {'bn': 'আমি বাংলাদেশ থেকে এসেছি', 'ko': '저는 방글라데시에서 왔어요', 'en': 'I am from Bangladesh'},
-    {'bn': 'আপনার সাথে দেখা করে ভালো লাগলো', 'ko': '만나서 반갑습니다', 'en': 'Nice to meet you'},
+    {
+      'bn': 'আমি বাংলাদেশ থেকে এসেছি',
+      'ko': '저는 방글라데시에서 왔어요',
+      'en': 'I am from Bangladesh'
+    },
+    {
+      'bn': 'আপনার সাথে দেখা করে ভালো লাগলো',
+      'ko': '만나서 반갑습니다',
+      'en': 'Nice to meet you'
+    },
     {'bn': 'বিদায়', 'ko': '안녕히 가세요', 'en': 'Goodbye'},
     {'bn': 'সাহায্য করুন', 'ko': '도와주세요', 'en': 'Help me'},
 
     // Travel
-    {'bn': 'বিমানবন্দর কোথায়?', 'ko': '공항은 어디에 있나요?', 'en': 'Where is the airport?'},
+    {
+      'bn': 'বিমানবন্দর কোথায়?',
+      'ko': '공항은 어디에 있나요?',
+      'en': 'Where is the airport?'
+    },
     {'bn': 'হোটেল কোথায়?', 'ko': '호텔은 어디에 있나요?', 'en': 'Where is the hotel?'},
-    {'bn': 'টয়লেট কোথায়?', 'ko': '화장실은 어디에 있나요?', 'en': 'Where is the toilet?'},
+    {
+      'bn': 'টয়লেট কোথায়?',
+      'ko': '화장실은 어디에 있나요?',
+      'en': 'Where is the toilet?'
+    },
     {'bn': 'আমি হারিয়ে গেছি', 'ko': '길을 잃었어요', 'en': 'I am lost'},
     {'bn': 'ট্যাক্সি ডাকুন', 'ko': '택시를 불러주세요', 'en': 'Call a taxi'},
 
@@ -42,7 +66,11 @@ class OfflinePhrasebook {
     {'bn': 'আমি অসুস্থ', 'ko': '아파요', 'en': 'I am sick'},
     {'bn': 'ডাক্তার ডাকুন', 'ko': '의사를 불러주세요', 'en': 'Call a doctor'},
     {'bn': 'পুলিশ ডাকুন', 'ko': '경찰을 불러주세요', 'en': 'Call the police'},
-    {'bn': 'অ্যাম্বুলেন্স ডাকুন', 'ko': '구급차를 불러주세요', 'en': 'Call an ambulance'},
+    {
+      'bn': 'অ্যাম্বুলেন্স ডাকুন',
+      'ko': '구급차를 불러주세요',
+      'en': 'Call an ambulance'
+    },
     {'bn': 'জরুরি', 'ko': '긴급합니다', 'en': 'Emergency'},
   ];
 

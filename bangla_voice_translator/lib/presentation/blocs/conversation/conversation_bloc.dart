@@ -12,8 +12,7 @@ import '../../../domain/usecases/generate_speech.dart';
 import 'conversation_event.dart';
 import 'conversation_state.dart';
 
-class ConversationBloc
-    extends Bloc<ConversationEvent, ConversationState> {
+class ConversationBloc extends Bloc<ConversationEvent, ConversationState> {
   final TranscribeAudio transcribeAudio;
   final TranslateText translateText;
   final GenerateSpeech generateSpeech;

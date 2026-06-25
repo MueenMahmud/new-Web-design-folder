@@ -38,8 +38,7 @@ class AudioHelper {
 
     for (final directory in [recordingsDir, ttsDir]) {
       if (await directory.exists()) {
-        final cutoff =
-            DateTime.now().subtract(Duration(days: maxAgeInDays));
+        final cutoff = DateTime.now().subtract(Duration(days: maxAgeInDays));
         await for (final entity in directory.list()) {
           if (entity is File) {
             final stat = await entity.stat();

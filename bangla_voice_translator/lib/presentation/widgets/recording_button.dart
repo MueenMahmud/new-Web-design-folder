@@ -30,14 +30,10 @@ class RecordingButton extends StatelessWidget {
           shape: BoxShape.circle,
           color: isProcessing
               ? colorScheme.surfaceContainerHighest
-              : (isRecording
-                  ? colorScheme.error
-                  : colorScheme.primary),
+              : (isRecording ? colorScheme.error : colorScheme.primary),
           boxShadow: [
             BoxShadow(
-              color: (isRecording
-                      ? colorScheme.error
-                      : colorScheme.primary)
+              color: (isRecording ? colorScheme.error : colorScheme.primary)
                   .withValues(alpha: isRecording ? 0.4 : 0.3),
               blurRadius: isRecording ? 30 : 15,
               spreadRadius: isRecording ? 5 : 0,

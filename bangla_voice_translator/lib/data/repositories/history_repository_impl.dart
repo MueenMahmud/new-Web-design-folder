@@ -17,8 +17,7 @@ class HistoryRepositoryImpl implements HistoryRepository {
   });
 
   @override
-  ResultFuture<List<Translation>> getHistory(
-      {int? limit, int? offset}) async {
+  ResultFuture<List<Translation>> getHistory({int? limit, int? offset}) async {
     try {
       final history = await localSource.getHistory();
       final start = offset ?? 0;
@@ -98,10 +97,7 @@ class HistoryRepositoryImpl implements HistoryRepository {
       }
       return (data: null, failure: null);
     } catch (e) {
-      return (
-        data: null,
-        failure: ServerFailure(message: 'Sync failed: $e')
-      );
+      return (data: null, failure: ServerFailure(message: 'Sync failed: $e'));
     }
   }
 }

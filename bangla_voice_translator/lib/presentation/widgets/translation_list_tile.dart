@@ -42,8 +42,8 @@ class TranslationListTile extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 6, vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
                       color: colorScheme.primaryContainer,
                       borderRadius: BorderRadius.circular(6),
@@ -57,8 +57,8 @@ class TranslationListTile extends StatelessWidget {
                   const Icon(Icons.arrow_right_alt, size: 16),
                   const SizedBox(width: 4),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 6, vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
                       color: colorScheme.secondaryContainer,
                       borderRadius: BorderRadius.circular(6),
@@ -107,9 +107,7 @@ class TranslationListTile extends StatelessWidget {
                   if (onFavorite != null)
                     IconButton(
                       icon: Icon(
-                        isFavorite
-                            ? Icons.favorite
-                            : Icons.favorite_border,
+                        isFavorite ? Icons.favorite : Icons.favorite_border,
                         size: 18,
                         color: isFavorite ? colorScheme.error : null,
                       ),

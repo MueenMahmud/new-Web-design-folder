@@ -40,22 +40,16 @@ class VoiceTranslationScreen extends StatelessWidget {
                 _buildStatusIndicator(context, state),
                 const SizedBox(height: 32),
                 RecordingButton(
-                  isRecording:
-                      state.status == TranslationStatus.recording,
+                  isRecording: state.status == TranslationStatus.recording,
                   isProcessing:
                       state.status == TranslationStatus.transcribing ||
                           state.status == TranslationStatus.translating ||
-                          state.status ==
-                              TranslationStatus.generatingAudio,
+                          state.status == TranslationStatus.generatingAudio,
                   onStartRecording: () {
-                    context
-                        .read<TranslationBloc>()
-                        .add(const StartRecording());
+                    context.read<TranslationBloc>().add(const StartRecording());
                   },
                   onStopRecording: () {
-                    context
-                        .read<TranslationBloc>()
-                        .add(const StopRecording());
+                    context.read<TranslationBloc>().add(const StopRecording());
                   },
                 ),
                 const SizedBox(height: 32),
@@ -82,8 +76,7 @@ class VoiceTranslationScreen extends StatelessWidget {
                         text: state.translation!.translatedText,
                       ));
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Copied to clipboard')),
+                        const SnackBar(content: Text('Copied to clipboard')),
                       );
                     },
                     onShare: () {
@@ -94,12 +87,10 @@ class VoiceTranslationScreen extends StatelessWidget {
                     },
                     onFavorite: () {
                       context.read<FavoritesBloc>().add(
-                            AddToFavorites(
-                                translation: state.translation!),
+                            AddToFavorites(translation: state.translation!),
                           );
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Added to favorites')),
+                        const SnackBar(content: Text('Added to favorites')),
                       );
                     },
                   ),
@@ -113,8 +104,7 @@ class VoiceTranslationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatusIndicator(
-      BuildContext context, TranslationState state) {
+  Widget _buildStatusIndicator(BuildContext context, TranslationState state) {
     final colorScheme = Theme.of(context).colorScheme;
     String message;
     IconData icon;
@@ -173,8 +163,7 @@ class VoiceTranslationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildErrorCard(
-      BuildContext context, TranslationState state) {
+  Widget _buildErrorCard(BuildContext context, TranslationState state) {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Card(
@@ -193,9 +182,7 @@ class VoiceTranslationScreen extends StatelessWidget {
             const SizedBox(height: 16),
             FilledButton.tonal(
               onPressed: () {
-                context
-                    .read<TranslationBloc>()
-                    .add(const RetryTranslation());
+                context.read<TranslationBloc>().add(const RetryTranslation());
               },
               child: const Text('Retry'),
             ),

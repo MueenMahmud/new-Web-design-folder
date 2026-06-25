@@ -124,9 +124,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
                 OutlinedButton.icon(
                   onPressed: () {
-                    context
-                        .read<AuthBloc>()
-                        .add(const SignOutRequested());
+                    context.read<AuthBloc>().add(const SignOutRequested());
                     context.go('/login');
                   },
                   icon: Icon(Icons.logout, color: colorScheme.error),

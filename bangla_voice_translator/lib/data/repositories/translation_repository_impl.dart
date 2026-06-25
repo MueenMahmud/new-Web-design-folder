@@ -30,8 +30,7 @@ class TranslationRepositoryImpl implements TranslationRepository {
     } on ServerException catch (e) {
       return (
         data: null,
-        failure: ServerFailure(
-            message: e.message, statusCode: e.statusCode)
+        failure: ServerFailure(message: e.message, statusCode: e.statusCode)
       );
     }
   }
@@ -55,8 +54,7 @@ class TranslationRepositoryImpl implements TranslationRepository {
     } on ServerException catch (e) {
       return (
         data: null,
-        failure: ServerFailure(
-            message: e.message, statusCode: e.statusCode)
+        failure: ServerFailure(message: e.message, statusCode: e.statusCode)
       );
     }
   }
@@ -79,8 +77,7 @@ class TranslationRepositoryImpl implements TranslationRepository {
     } on ServerException catch (e) {
       return (
         data: null,
-        failure: ServerFailure(
-            message: e.message, statusCode: e.statusCode)
+        failure: ServerFailure(message: e.message, statusCode: e.statusCode)
       );
     }
   }
@@ -129,10 +126,7 @@ class TranslationRepositoryImpl implements TranslationRepository {
 
       return (data: translation, failure: null);
     } on ServerException catch (e) {
-      return (
-        data: null,
-        failure: TranslationFailure(message: e.message)
-      );
+      return (data: null, failure: TranslationFailure(message: e.message));
     }
   }
 

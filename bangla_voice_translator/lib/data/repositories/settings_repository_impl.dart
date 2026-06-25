@@ -62,8 +62,7 @@ class SettingsRepositoryImpl implements SettingsRepository {
   @override
   ResultFuture<void> setLocale(Locale locale) async {
     try {
-      await localSource.setString(
-          AppConstants.localeKey, locale.languageCode);
+      await localSource.setString(AppConstants.localeKey, locale.languageCode);
       return (data: null, failure: null);
     } catch (e) {
       return (

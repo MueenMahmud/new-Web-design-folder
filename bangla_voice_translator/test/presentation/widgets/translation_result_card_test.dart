@@ -39,8 +39,7 @@ void main() {
       expect(find.text('Hello'), findsOneWidget);
     });
 
-    testWidgets('should display language labels',
-        (WidgetTester tester) async {
+    testWidgets('should display language labels', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -111,8 +110,7 @@ void main() {
       expect(find.byIcon(Icons.stop), findsOneWidget);
     });
 
-    testWidgets('should display action buttons',
-        (WidgetTester tester) async {
+    testWidgets('should display action buttons', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(

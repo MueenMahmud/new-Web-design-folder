@@ -11,10 +11,8 @@ class ApiClient {
     _dio = Dio(
       BaseOptions(
         baseUrl: AppConstants.openAiBaseUrl,
-        connectTimeout:
-            const Duration(seconds: AppConstants.connectionTimeout),
-        receiveTimeout:
-            const Duration(seconds: AppConstants.receiveTimeout),
+        connectTimeout: const Duration(seconds: AppConstants.connectionTimeout),
+        receiveTimeout: const Duration(seconds: AppConstants.receiveTimeout),
         headers: {
           'Authorization': 'Bearer ${ApiKeys.openAiApiKey}',
           'Content-Type': 'application/json',

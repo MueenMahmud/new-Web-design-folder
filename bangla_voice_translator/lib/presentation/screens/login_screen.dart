@@ -89,8 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         prefixIcon: Icon(Icons.person_outline),
                       ),
                       validator: (value) {
-                        if (_isSignUp &&
-                            (value == null || value.isEmpty)) {
+                        if (_isSignUp && (value == null || value.isEmpty)) {
                           return 'Please enter your name';
                         }
                         return null;
@@ -156,8 +155,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ? const SizedBox(
                                 height: 20,
                                 width: 20,
-                                child: CircularProgressIndicator(
-                                    strokeWidth: 2),
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 2),
                               )
                             : Text(_isSignUp ? 'Sign Up' : 'Sign In'),
                       );

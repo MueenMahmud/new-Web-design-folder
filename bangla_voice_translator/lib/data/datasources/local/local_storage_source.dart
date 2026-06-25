@@ -48,8 +48,8 @@ class LocalStorageSourceImpl implements LocalStorageSource {
 
       final List<dynamic> jsonList = json.decode(jsonString) as List<dynamic>;
       return jsonList
-          .map((item) =>
-              TranslationModel.fromJson(item as Map<String, dynamic>))
+          .map(
+              (item) => TranslationModel.fromJson(item as Map<String, dynamic>))
           .toList();
     } catch (e) {
       throw CacheException(message: 'Failed to load history: $e');
@@ -63,13 +63,11 @@ class LocalStorageSourceImpl implements LocalStorageSource {
       history.insert(0, translation);
 
       if (history.length > AppConstants.maxHistoryItems) {
-        history.removeRange(
-            AppConstants.maxHistoryItems, history.length);
+        history.removeRange(AppConstants.maxHistoryItems, history.length);
       }
 
-      final jsonList = history
-          .map((t) => TranslationModel.fromEntity(t).toJson())
-          .toList();
+      final jsonList =
+          history.map((t) => TranslationModel.fromEntity(t).toJson()).toList();
       await prefs.setString(_historyKey, json.encode(jsonList));
     } catch (e) {
       throw CacheException(message: 'Failed to save to history: $e');
@@ -82,9 +80,8 @@ class LocalStorageSourceImpl implements LocalStorageSource {
       final history = await getHistory();
       history.removeWhere((t) => t.id == id);
 
-      final jsonList = history
-          .map((t) => TranslationModel.fromEntity(t).toJson())
-          .toList();
+      final jsonList =
+          history.map((t) => TranslationModel.fromEntity(t).toJson()).toList();
       await prefs.setString(_historyKey, json.encode(jsonList));
     } catch (e) {
       throw CacheException(message: 'Failed to delete from history: $e');
@@ -108,8 +105,8 @@ class LocalStorageSourceImpl implements LocalStorageSource {
 
       final List<dynamic> jsonList = json.decode(jsonString) as List<dynamic>;
       return jsonList
-          .map((item) =>
-              TranslationModel.fromJson(item as Map<String, dynamic>))
+          .map(
+              (item) => TranslationModel.fromJson(item as Map<String, dynamic>))
           .toList();
     } catch (e) {
       throw CacheException(message: 'Failed to load favorites: $e');
@@ -125,8 +122,7 @@ class LocalStorageSourceImpl implements LocalStorageSource {
       favorites.insert(0, translation);
 
       if (favorites.length > AppConstants.maxFavoriteItems) {
-        favorites.removeRange(
-            AppConstants.maxFavoriteItems, favorites.length);
+        favorites.removeRange(AppConstants.maxFavoriteItems, favorites.length);
       }
 
       final jsonList = favorites

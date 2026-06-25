@@ -74,8 +74,7 @@ class FirebaseRemoteSourceImpl implements FirebaseRemoteSource {
       final profile = _userToProfile(credential.user!).copyWith(
         displayName: displayName,
       );
-      await saveUserProfile(
-          UserProfileModel.fromEntity(profile));
+      await saveUserProfile(UserProfileModel.fromEntity(profile));
       return UserProfileModel.fromEntity(profile);
     } on FirebaseAuthException catch (e) {
       throw ServerException(message: e.message ?? 'Registration failed');
@@ -188,8 +187,7 @@ class FirebaseRemoteSourceImpl implements FirebaseRemoteSource {
   }
 
   @override
-  Future<void> saveFavorite(
-      String userId, TranslationModel translation) async {
+  Future<void> saveFavorite(String userId, TranslationModel translation) async {
     try {
       await firestore
           .collection(AppConstants.usersCollection)

@@ -36,8 +36,7 @@ class SettingsScreen extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.language),
                 title: const Text('Language'),
-                subtitle:
-                    Text(_getLocaleName(settingsState.locale)),
+                subtitle: Text(_getLocaleName(settingsState.locale)),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () => _showLanguageDialog(context, settingsState),
               ),
@@ -50,21 +49,16 @@ class SettingsScreen extends StatelessWidget {
                       children: [
                         ListTile(
                           leading: const Icon(Icons.person),
-                          title: Text(
-                              authState.user?.displayName ?? 'User'),
+                          title: Text(authState.user?.displayName ?? 'User'),
                           subtitle: Text(authState.user?.email ??
-                              (authState.isGuest
-                                  ? 'Guest User'
-                                  : '')),
+                              (authState.isGuest ? 'Guest User' : '')),
                           trailing: const Icon(Icons.chevron_right),
                           onTap: () => context.push('/profile'),
                         ),
                         ListTile(
-                          leading: Icon(Icons.logout,
-                              color: colorScheme.error),
+                          leading: Icon(Icons.logout, color: colorScheme.error),
                           title: Text('Sign Out',
-                              style:
-                                  TextStyle(color: colorScheme.error)),
+                              style: TextStyle(color: colorScheme.error)),
                           onTap: () {
                             context
                                 .read<AuthBloc>()
@@ -119,8 +113,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  void _showThemeDialog(
-      BuildContext context, SettingsState state) {
+  void _showThemeDialog(BuildContext context, SettingsState state) {
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(
@@ -167,8 +160,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  void _showLanguageDialog(
-      BuildContext context, SettingsState state) {
+  void _showLanguageDialog(BuildContext context, SettingsState state) {
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(

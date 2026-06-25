@@ -102,16 +102,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.error_outline,
-                      size: 64, color: colorScheme.error),
+                  Icon(Icons.error_outline, size: 64, color: colorScheme.error),
                   const SizedBox(height: 16),
                   Text(state.errorMessage ?? 'Failed to load history'),
                   const SizedBox(height: 16),
                   FilledButton(
                     onPressed: () {
-                      context
-                          .read<HistoryBloc>()
-                          .add(const LoadHistory());
+                      context.read<HistoryBloc>().add(const LoadHistory());
                     },
                     child: const Text('Retry'),
                   ),
@@ -133,20 +130,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   const SizedBox(height: 16),
                   Text(
                     'No translations yet',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium
-                        ?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: colorScheme.onSurface.withValues(alpha: 0.6),
                         ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Your translation history will appear here',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: colorScheme.onSurface.withValues(alpha: 0.4),
                         ),
                   ),
@@ -205,9 +196,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
           ),
           FilledButton(
             onPressed: () {
-              context
-                  .read<HistoryBloc>()
-                  .add(const ClearAllHistory());
+              context.read<HistoryBloc>().add(const ClearAllHistory());
               Navigator.pop(context);
             },
             child: const Text('Clear'),

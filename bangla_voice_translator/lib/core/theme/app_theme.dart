@@ -61,7 +61,8 @@ class AppTheme {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: _lightColorScheme.primary,
-          unselectedItemColor: _lightColorScheme.onSurface.withValues(alpha: 0.6),
+          unselectedItemColor:
+              _lightColorScheme.onSurface.withValues(alpha: 0.6),
         ),
       );
 
@@ -105,7 +106,8 @@ class AppTheme {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: _darkColorScheme.primary,
-          unselectedItemColor: _darkColorScheme.onSurface.withValues(alpha: 0.6),
+          unselectedItemColor:
+              _darkColorScheme.onSurface.withValues(alpha: 0.6),
         ),
       );
 }

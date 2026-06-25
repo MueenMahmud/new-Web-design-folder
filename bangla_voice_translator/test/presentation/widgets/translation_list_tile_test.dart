@@ -31,8 +31,7 @@ void main() {
       expect(find.text('Hello'), findsOneWidget);
     });
 
-    testWidgets('should show language flags',
-        (WidgetTester tester) async {
+    testWidgets('should show language flags', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(

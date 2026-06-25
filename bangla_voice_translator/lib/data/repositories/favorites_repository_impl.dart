@@ -76,10 +76,7 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
       }
       return (data: null, failure: null);
     } catch (e) {
-      return (
-        data: null,
-        failure: ServerFailure(message: 'Sync failed: $e')
-      );
+      return (data: null, failure: ServerFailure(message: 'Sync failed: $e'));
     }
   }
 }

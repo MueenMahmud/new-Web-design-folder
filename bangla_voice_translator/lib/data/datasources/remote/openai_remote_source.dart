@@ -90,14 +90,12 @@ class OpenAiRemoteSourceImpl implements OpenAiRemoteSource {
         },
       );
 
-      final choices =
-          response.data?['choices'] as List<dynamic>?;
+      final choices = response.data?['choices'] as List<dynamic>?;
       if (choices == null || choices.isEmpty) {
         throw const ServerException(message: 'No translation received');
       }
 
-      final message =
-          choices[0]['message'] as Map<String, dynamic>;
+      final message = choices[0]['message'] as Map<String, dynamic>;
       return message['content'] as String? ?? '';
     } on ServerException {
       rethrow;

@@ -4,6 +4,7 @@ import '../../core/utils/typedef.dart';
 import '../../domain/entities/user_profile.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../datasources/remote/firebase_remote_source.dart';
+
 class AuthRepositoryImpl implements AuthRepository {
   final FirebaseRemoteSource remoteSource;
 
@@ -50,8 +51,7 @@ class AuthRepositoryImpl implements AuthRepository {
     // Google Sign-In requires platform-specific setup
     return (
       data: null,
-      failure: const AuthFailure(
-          message: 'Google Sign-In not configured yet')
+      failure: const AuthFailure(message: 'Google Sign-In not configured yet')
     );
   }
 
